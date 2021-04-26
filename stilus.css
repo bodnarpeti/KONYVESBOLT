@@ -1,0 +1,63 @@
+body{
+    background-image: url('books.jpg');
+    background-attachment: fixed;
+}
+
+#tabla {
+    border-color: black;
+    border-style: solid;
+    border-width: 5pt;
+    border-spacing: 10pt;
+    color: black;
+    font-size: 25px;
+}
+
+h1{
+    text-align: center;
+    font-weight:bold;
+    letter-spacing: 5px;
+    font-size: 40px;
+}
+
+h1 span{
+    background-color:yellow;
+}
+
+#navigation li {
+    display: inline-block;
+    margin: 5px;
+}
+
+li a:hover:not(.active) {
+    background-color: yellow;
+}
+
+.active {
+    background-color: yellow;
+}
+
+#navigation {
+    background-color: saddlebrown;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    border: 5px solid black;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+
+header {
+    background-color: sandybrown;
+    border: 5px solid black;
+    text-align: center;
+    position: static;
+}
+
