@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <html lang="hu">
 <head>
@@ -48,7 +52,7 @@ echo 'csákó';
 echo '<h2>A tábla rekordjai: </h2>';
 echo '<table border="0" id="tabla">';
 
-$stid = oci_parse($conn, 'SELECT loginid, teljes_nev_vasarlo, szultesi_datum, lakcim FROM VASARLO');
+$stid = oci_parse($conn, 'SELECT loginid, teljes_nev_vasarlo, szuletesi_datum, lakcim FROM VASARLO');
 oci_execute($stid);
 
 $nfields = oci_num_fields($stid);
@@ -59,12 +63,16 @@ for ($i = 1; $i<=$nfields; $i++){
 }
 echo '</tr>';
 
+//$stid = oci_parse($conn, 'SELECT loginid, teljes_nev_vasarlo, szuletesi_datum, lakcim FROM VASARLO');
 oci_execute($stid);
 
-while ( $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
+// Ez valamiért nem mükszik
+while ( ($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
     echo '<tr>';
+    echo 'asd';
     foreach ($row as $item) {
-        echo '<td style="text-align: center">' . $item . '</td>';
+        echo '<td style="text-align: center">' . $item['TELJES_NEV_VASARLO'] . '</td>';
+        
     }
     echo '</tr>';
 }
