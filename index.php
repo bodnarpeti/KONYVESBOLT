@@ -19,7 +19,8 @@ session_start();
         p {
             color: white;
             font-family: Arial, sans-serif;
-            font-size: 30px
+            font-size: 30px;
+            text-align: center;
         }
     </style>
 </head>
