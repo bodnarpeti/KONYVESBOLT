@@ -30,7 +30,7 @@ error_reporting(E_ALL);
     <ul>
         <li><a href = index.php target="_self">Főoldal</a></li>
         <li><a href = vasarlo.php target="_self">Vásárlóink</a></li>
-        <li><a href = boooks.php target="_self">Könyveink</a></li>
+        <li><a href = books.php target="_self">Könyveink</a></li>
         <li><a href = salers.php target="_self">Eladóink</a></li>
     </ul>
 </nav>
