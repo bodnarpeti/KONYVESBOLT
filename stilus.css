@@ -28,6 +28,10 @@ h1 span{
     margin: 5px;
 }
 
+h2 {
+    color: white;
+}
+
 li a:hover:not(.active) {
     background-color: yellow;
 }
