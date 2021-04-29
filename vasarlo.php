@@ -51,7 +51,7 @@ $conn = oci_connect('admin', 'valami420', $tns,'UTF8');
 echo '<h2>A tábla rekordjai: </h2>';
 echo '<table border="0" id="tabla">';
 
-$stid = oci_parse($conn, 'SELECT loginid, teljes_nev_vasarlo, szuletesi_datum, lakcim FROM VASARLO');
+$stid = oci_parse($conn, 'SELECT loginid, teljesNevVasarlo, szuletesiDatum, lakcim FROM VASARLO');
 oci_execute($stid);
 
 $nfields = oci_num_fields($stid);
@@ -62,7 +62,7 @@ for ($i = 1; $i<=$nfields; $i++){
 }
 echo '</tr>';
 
-//$stid = oci_parse($conn, 'SELECT loginid, teljes_nev_vasarlo, szuletesi_datum, lakcim FROM VASARLO');
+//$stid = oci_parse($conn, 'SELECT loginid, teljesNevVasarlo, szuletesiDatum, lakcim FROM VASARLO');
 oci_execute($stid);
 
 // Ez valamiért nem mükszik
@@ -70,7 +70,7 @@ while ( ($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
     echo '<tr>';
     echo 'asd';
     foreach ($row as $item) {
-        echo '<td style="text-align: center">' . $item['TELJES_NEV_VASARLO'] . '</td>';
+        echo '<td style="text-align: center">' . $item . '</td>';
         
     }
     echo '</tr>';

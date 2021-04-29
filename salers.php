@@ -42,7 +42,7 @@ $tns = "
     )
   )";
 
-$conn = oci_connect('valaki', '12345678', $tns,'UTF8');
+$conn = oci_connect('admin', 'valami420', $tns,'UTF8');
 
 echo '<h2>A tábla rekordjai: </h2>';
 echo '<table border="0" id="tabla">';
