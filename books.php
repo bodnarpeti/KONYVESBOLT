@@ -44,6 +44,7 @@ $tns = "
   )";
 
 $conn = oci_connect('admin', 'valami420', $tns,'UTF8');
+?>
 
 <form action="books.php" method="post">
 
@@ -60,7 +61,7 @@ $conn = oci_connect('admin', 'valami420', $tns,'UTF8');
 if(!empty($_POST)) {
     $msg="";
 
-    if(empty($_POST['konyvid']) || empty($_POST['konyvCime']) ||  empty($_POST['ar'])  || empty($_POST['loginid']){
+    if(empty($_POST['konyvid']) || empty($_POST['konyvCime']) ||  empty($_POST['ar'])  || empty($_POST['loginid'])){
         // TODO set error message
         $msg.="<li>Az összes mező kitöltése kötelező";
     }
@@ -74,16 +75,16 @@ if(!empty($_POST)) {
         $price = $_POST['ar'];
         $otherid = $_POST['loginid'];        
 
-        //TODO: generate loginid
-        $sql = 'INSERT INTO VASARLO(konyvid,konyvCime,ar,loginid) '.
-               'VALUES(0001, :konyvCime, 1000, :loginid)';
+        //TODO: generate id
+        $sql = 'INSERT INTO KONYV(konyvid,konyvCime,ar,loginid) '.
+               'VALUES(:konyvid, :konyvCime, :ar, :loginid)';
 
         $compiled = oci_parse($conn, $sql);
 
         oci_bind_by_name($compiled, ':konyvid', $id);
-        oci_bind_by_name($compiled, 'konyvCime', $title);
-        oci_bind_by_name($compiled, 'ar', $price);
-        oci_bind_by_name($compiled, 'loginid', $otherid);
+        oci_bind_by_name($compiled, ':konyvCime', $title);
+        oci_bind_by_name($compiled, ':ar', $price);
+        oci_bind_by_name($compiled, ':loginid', $otherid);
        
         oci_execute($compiled);
 

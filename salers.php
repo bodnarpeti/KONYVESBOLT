@@ -43,6 +43,7 @@ $tns = "
   )";
 
 $conn = oci_connect('admin', 'valami420', $tns,'UTF8');
+?>
 
 <form action="salers.php" method="post">
 
@@ -57,7 +58,7 @@ $conn = oci_connect('admin', 'valami420', $tns,'UTF8');
 if(!empty($_POST)) {
     $msg="";
 
-    if(empty($_POST['eladoid']) || empty($_POST['teljesNevElado']) {
+    if(empty($_POST['eladoid']) || empty($_POST['teljesNevElado'])) {
         // TODO set error message
         $msg.="<li>Az összes mező kitöltése kötelező";
     }
@@ -69,14 +70,14 @@ if(!empty($_POST)) {
         $id = $_POST['eladoid'];
         $fullname = $_POST['teljesNevElado'];
         
-        //TODO: generate loginid
-        $sql = 'INSERT INTO VASARLO(eladoid,teljesNevElado) '.
-               'VALUES(0001, :teljesNevElado)';
+        //TODO: generate eladoid
+        $sql = 'INSERT INTO ELADO(eladoid,teljesNevElado) '.
+               'VALUES(:eladoid, :teljesNevElado)';
 
         $compiled = oci_parse($conn, $sql);
 
         oci_bind_by_name($compiled, ':eladoid', $id);
-        oci_bind_by_name($compiled, 'teljesNevElado', $fullname);
+        oci_bind_by_name($compiled, ':teljesNevElado', $fullname);
        
         oci_execute($compiled);
 
