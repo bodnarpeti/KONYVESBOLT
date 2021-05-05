@@ -44,6 +44,46 @@ $tns = "
 
 $conn = oci_connect('admin', 'valami420', $tns,'UTF8');
 
+<form action="salers.php" method="post">
+
+    <input class="" type="text" name="eladoid" value="" placeholder="Eladó azonosítója">
+    <input class="" type="text" name="teljesNevElado" value="" placeholder="Eladó teljes neve">
+    
+    <button type="submit">Sor felvétele</button>
+</form>
+
+<?php
+
+if(!empty($_POST)) {
+    $msg="";
+
+    if(empty($_POST['eladoid']) || empty($_POST['teljesNevElado']) {
+        // TODO set error message
+        $msg.="<li>Az összes mező kitöltése kötelező";
+    }
+
+    if($msg!="") {
+        //TODO show errors after redirect
+        //header("location:salers.php?error=".$msg);
+    } else {
+        $id = $_POST['eladoid'];
+        $fullname = $_POST['teljesNevElado'];
+        
+        //TODO: generate loginid
+        $sql = 'INSERT INTO VASARLO(eladoid,teljesNevElado) '.
+               'VALUES(0001, :teljesNevElado)';
+
+        $compiled = oci_parse($conn, $sql);
+
+        oci_bind_by_name($compiled, ':eladoid', $id);
+        oci_bind_by_name($compiled, 'teljesNevElado', $fullname);
+       
+        oci_execute($compiled);
+
+        //header("location:salers.php?ok=1");
+    }
+}
+
 echo '<h2>A tábla rekordjai: </h2>';
 echo '<table border="0" id="tabla">';
 
