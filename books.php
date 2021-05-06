@@ -6,8 +6,8 @@ session_start();
     <meta charset="UTF-8">
     <title>Konyvesbolt</title>
     <meta name="author" content="Demeter Ádám, Tajti Sándor, Bodnár Péter"/>
-    <link rel="icon" href="logo.png"/>
-    <link rel=stylesheet type="text/css" href="stilus.css" />
+    <link rel="icon" href="images/logo.png"/>
+    <link rel=stylesheet type="text/css" href="styles/books_styles.css" />
     <style>
         #reading{
             position: relative;
@@ -31,7 +31,7 @@ session_start();
         <li><a href = salers.php target="_self">Eladóink</a></li>
     </ul>
 </nav>
-<img id="reading" src="reading.gif" alt="Reading" title="reading" width="350" height="250"  />
+<img id="reading" src="images/reading.gif" alt="Reading" title="reading" width="350" height="250"  />
 <?php
 $tns = "
 (DESCRIPTION =
@@ -43,7 +43,7 @@ $tns = "
     )
   )";
 
-$conn = oci_connect('admin', 'valami420', $tns,'UTF8');
+$conn = oci_connect('system', 'oracle', $tns,'UTF8');
 ?>
 
 <form action="books.php" method="post">

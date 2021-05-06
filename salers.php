@@ -6,8 +6,8 @@ session_start();
     <meta charset="UTF-8">
     <title>Konyvesbolt</title>
     <meta name="author" content="Demeter Ádám, Tajti Sándor, Bodnár Péter"/>
-    <link rel="icon" href="logo.png"/>
-    <link rel=stylesheet type="text/css" href="stilus.css" />
+    <link rel="icon" href="images/logo.png"/>
+    <link rel=stylesheet type="text/css" href="styles/salers_styles.css" />
     <style>
         #elado{
             position: relative;
@@ -30,7 +30,7 @@ session_start();
         <li><a href = salers.php target="_self">Eladóink</a></li>
     </ul>
 </nav>
-<img id="elado" src="elado.png" alt="Elado" title="elado" width="550" height="300"  />
+<img id="elado" src="images/elado.png" alt="Elado" title="elado" width="550" height="300"  />
 <?php
 $tns = "
 (DESCRIPTION =
@@ -42,7 +42,7 @@ $tns = "
     )
   )";
 
-$conn = oci_connect('admin', 'valami420', $tns,'UTF8');
+$conn = oci_connect('system', 'oracle', $tns,'UTF8');
 ?>
 
 <form action="salers.php" method="post">

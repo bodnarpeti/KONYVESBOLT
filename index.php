@@ -6,8 +6,8 @@ session_start();
     <meta charset="UTF-8">
     <title>Konyvesbolt</title>
     <meta name="author" content="Demeter Ádám, Tajti Sándor, Bodnár Péter"/>
-    <link rel="icon" href="logo.png"/>
-    <link rel=stylesheet type="text/css" href="stilus.css" />
+    <link rel="icon" href="images/logo.png"/>
+    <link rel=stylesheet type="text/css" href="styles/index_styles.css" />
     <style>
         #udv{
             position: relative;
@@ -38,7 +38,7 @@ session_start();
 </nav>
 <p>Az alábbi Adatbázis alapú rendszerek gyakorlat projektmunka egy könyvesbolt webes felületének működését reprezentálja.</p>
 
-<img id="udv" src="udv.gif" alt="Welcome" title="welcome" width="550" height="350"  />
+<img id="udv" src="images/udv.gif" alt="Welcome" title="welcome" width="550" height="350"  />
 
 </body>
 </html>
