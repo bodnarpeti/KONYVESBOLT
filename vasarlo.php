@@ -28,10 +28,10 @@ error_reporting(E_ALL);
 </header>
 <nav id="navigation">
     <ul>
-        <li><a href = index.php target="_self">Főoldal</a></li>
-        <li><a href = vasarlo.php target="_self">Vásárlóink</a></li>
-        <li><a href = books.php target="_self">Könyveink</a></li>
-        <li><a href = salers.php target="_self">Eladóink</a></li>
+        <li class="indexbtn"><a href = index.php target="_self">Főoldal</a></li>
+        <li class="vasarlobtn"><a href = vasarlo.php target="_self">Vásárlóink</a></li>
+        <li class="booksbtn"><a href = books.php target="_self">Könyveink</a></li>
+        <li class="salersbtn"><a href = salers.php target="_self">Eladóink</a></li>
     </ul>
 </nav>
 <img id="customer" src="images/customer.png" alt="Customer" title="customer" width="350" height="250"  />
