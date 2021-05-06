@@ -1,6 +1,7 @@
 body{
     background-image: url('../images/books.jpg');
     background-attachment: fixed;
+    font-family: 'Poppins',sans-serif;
 }
 
 #tabla {
@@ -8,8 +9,15 @@ body{
     border-style: solid;
     border-width: 5pt;
     border-spacing: 10pt;
+    border-radius: 10px;
     color: white;
     font-size: 25px;
+    background-color: lightsalmon;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    color: black;
 }
 
 h1{
@@ -20,7 +28,7 @@ h1{
 }
 
 h1 span{
-    background-color:yellow;
+
 }
 
 #navigation li {
@@ -34,6 +42,7 @@ h2 {
 
 li a:hover:not(.active) {
     background-color: yellow;
+    color: black;
 }
 
 .active {
@@ -43,7 +52,6 @@ li a:hover:not(.active) {
 #navigation {
     background-color: saddlebrown;
     text-align: center;
-    font-family: Arial, sans-serif;
     font-size: 20px;
     border: 5px solid black;
 }
@@ -55,6 +63,7 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     color: white;
+    border-radius: 25px;
 }
 
 
@@ -65,3 +74,8 @@ header {
     position: static;
 }
 
+.booksbtn{
+    background-color: orange;
+    color: black;
+    border-radius: 25px;
+}
