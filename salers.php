@@ -36,36 +36,6 @@
 
 <?php
 
-if(!empty($_POST)) {
-    $msg="";
-
-    if(empty($_POST['eladoid']) || empty($_POST['teljesNevElado'])) {
-        // TODO set error message
-        $msg.="<li>Az összes mező kitöltése kötelező";
-    }
-
-    if($msg!="") {
-        //TODO show errors after redirect
-        //header("location:salers.php?error=".$msg);
-    } else {
-        $id = $_POST['eladoid'];
-        $fullname = $_POST['teljesNevElado'];
-        
-        //TODO: generate eladoid
-        $sql = 'INSERT INTO ELADO(eladoid,teljesNevElado) '.
-               'VALUES(:eladoid, :teljesNevElado)';
-
-        $compiled = oci_parse($conn, $sql);
-
-        oci_bind_by_name($compiled, ':eladoid', $id);
-        oci_bind_by_name($compiled, ':teljesNevElado', $fullname);
-       
-        oci_execute($compiled);
-
-        //header("location:salers.php?ok=1");
-    }
-}
-
 echo '<h2>A tábla rekordjai: </h2>';
 echo '<table border="0" id="tabla">';
 
@@ -87,6 +57,13 @@ while ( $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
     foreach ($row as $item) {
         echo '<td style="text-align: center">' . $item . '</td>';
     }
+    echo '
+        <td style="text-align: center">
+         <form action="controllers/salers/delete.php" method="post"> 
+          <input type="hidden" name="id" value=' . $row['ELADOID'] . '>
+          <button type="submit">Delete</button> 
+         </form> 
+        </td>';
     echo '</tr>';
 }
 echo '</table>';
@@ -95,7 +72,7 @@ oci_close($conn);
 
 ?>
 
-<form action="salers.php" method="post">
+<form action="controllers/salers/insert.php" method="post">
 
     <input class="" type="text" name="eladoid" value="" placeholder="Eladó azonosítója">
     <input class="" type="text" name="teljesNevElado" value="" placeholder="Eladó teljes neve">
