@@ -67,9 +67,19 @@ while ( ($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
         <td style="text-align: center">
          <form action="controllers/vasarlo/delete.php" method="post"> 
           <input type="hidden" name="id" value=' . $row['LOGINID'] . '>
-          <button type="submit">Delete</button> 
+          <button type="submit">Törlés</button> 
          </form> 
         </td>';
+    echo '
+    <td style="text-align: center">
+     <form action="controllers/vasarlo/update.php" method="post"> 
+      <input type="hidden" name="id" value=' . $row['LOGINID'] . '>
+      <input type="hidden" name="teljesNevVasarlo" value=' . $row['TELJESNEVVASARLO'] . '>
+      <input type="hidden" name="szuletesiDatum" value=' . $row['SZULETESIDATUM'] . '>
+      <input type="hidden" name="lakcim" value=' . $row["LAKCIM"] . '>
+      <button type="submit">Módosítás</button> 
+     </form> 
+    </td>';
     echo '</tr>';
 }
 echo '</table>';
