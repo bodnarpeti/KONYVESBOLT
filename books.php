@@ -37,40 +37,6 @@
 
 <?php
 
-if(!empty($_POST)) {
-    $msg="";
-
-    if(empty($_POST['konyvid']) || empty($_POST['konyvCime']) ||  empty($_POST['ar'])  || empty($_POST['loginid'])){
-        // TODO set error message
-        $msg.="<li>Az összes mező kitöltése kötelező";
-    }
-
-    if($msg!="") {
-        //TODO show errors after redirect
-        //header("location:books.php?error=".$msg);
-    } else {
-        $id = $_POST['konyvid'];
-        $title = $_POST['konyvCime'];
-        $price = $_POST['ar'];
-        $otherid = $_POST['loginid'];        
-
-        //TODO: generate id
-        $sql = 'INSERT INTO KONYV(konyvid,konyvCime,ar,loginid) '.
-               'VALUES(:konyvid, :konyvCime, :ar, :loginid)';
-
-        $compiled = oci_parse($conn, $sql);
-
-        oci_bind_by_name($compiled, ':konyvid', $id);
-        oci_bind_by_name($compiled, ':konyvCime', $title);
-        oci_bind_by_name($compiled, ':ar', $price);
-        oci_bind_by_name($compiled, ':loginid', $otherid);
-       
-        oci_execute($compiled);
-
-        //header("location:books.php?ok=1");
-    }
-}
-
 echo '<h2>A tábla rekordjai: </h2>';
 echo '<table border="0" id="tabla">';
 
@@ -92,6 +58,13 @@ while ( $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
     foreach ($row as $item) {
         echo '<td style="text-align: center">' . $item . '</td>';
     }
+    echo '
+        <td style="text-align: center">
+         <form action="controllers/books/delete.php" method="post"> 
+          <input type="hidden" name="id" value=' . $row['KONYVID'] . '>
+          <button type="submit">Delete</button> 
+         </form> 
+        </td>';
     echo '</tr>';
 }
 echo '</table>';
@@ -100,7 +73,7 @@ oci_close($conn);
 
 ?>
 
-<form action="books.php" method="post">
+<form action="controllers/books/insert.php" method="post">
 
     <input class="" type="text" name="konyvid" value="" placeholder="Könyv azonosítója">
     <input class="" type="text" name="konyvCime" value="" placeholder="Könyv címe">
