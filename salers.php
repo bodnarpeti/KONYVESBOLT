@@ -34,14 +34,6 @@
 </nav>
 <img id="elado" src="images/elado.png" alt="Elado" title="elado" width="550" height="300"  />
 
-<form action="salers.php" method="post">
-
-    <input class="" type="text" name="eladoid" value="" placeholder="Eladó azonosítója">
-    <input class="" type="text" name="teljesNevElado" value="" placeholder="Eladó teljes neve">
-    
-    <button type="submit">Sor felvétele</button>
-</form>
-
 <?php
 
 if(!empty($_POST)) {
@@ -102,6 +94,14 @@ echo '</table>';
 oci_close($conn);
 
 ?>
+
+<form action="salers.php" method="post">
+
+    <input class="" type="text" name="eladoid" value="" placeholder="Eladó azonosítója">
+    <input class="" type="text" name="teljesNevElado" value="" placeholder="Eladó teljes neve">
+    
+    <button type="submit">Sor felvétele</button>
+</form>
 
 </body>
 </html>

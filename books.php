@@ -35,16 +35,6 @@
 </nav>
 <img id="reading" src="images/reading.gif" alt="Reading" title="reading" width="350" height="250"  />
 
-<form action="books.php" method="post">
-
-    <input class="" type="text" name="konyvid" value="" placeholder="Könyv azonosítója">
-    <input class="" type="text" name="konyvCime" value="" placeholder="Könyv címe">
-    <input class="" type="text" name="ar" value="" placeholder="Könyv ára">
-    <input class="" type="text" name="loginid" value="" placeholder="Vásárló azonosítója">
-    
-    <button type="submit">Sor felvétele</button>
-</form>
-
 <?php
 
 if(!empty($_POST)) {
@@ -109,6 +99,16 @@ echo '</table>';
 oci_close($conn);
 
 ?>
+
+<form action="books.php" method="post">
+
+    <input class="" type="text" name="konyvid" value="" placeholder="Könyv azonosítója">
+    <input class="" type="text" name="konyvCime" value="" placeholder="Könyv címe">
+    <input class="" type="text" name="ar" value="" placeholder="Könyv ára">
+    <input class="" type="text" name="loginid" value="" placeholder="Vásárló azonosítója">
+    
+    <button type="submit">Sor felvétele</button>
+</form>
 
 </body>
 </html>
