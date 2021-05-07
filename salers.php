@@ -1,6 +1,8 @@
 <?php
-session_start();
+    session_start();
+    require('db/config.php');
 ?>
+
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -31,19 +33,6 @@ session_start();
     </ul>
 </nav>
 <img id="elado" src="images/elado.png" alt="Elado" title="elado" width="550" height="300"  />
-<?php
-$tns = "
-(DESCRIPTION =
-    (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
-    )
-    (CONNECT_DATA =
-      (SID = xe)
-    )
-  )";
-
-$conn = oci_connect('system', 'oracle', $tns,'UTF8');
-?>
 
 <form action="salers.php" method="post">
 

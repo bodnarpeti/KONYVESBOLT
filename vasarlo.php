@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require('db/config.php');
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -35,20 +37,6 @@ error_reporting(E_ALL);
     </ul>
 </nav>
 <img id="customer" src="images/customer.png" alt="Customer" title="customer" width="350" height="250"  />
-
-<?php
-$tns = "
-(DESCRIPTION =
-    (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
-    )
-    (CONNECT_DATA =
-      (SID = xe)
-    )
-  )";
-
-$conn = oci_connect('system', 'oracle', $tns,'UTF8');
-?>
 
 <form action="vasarlo.php" method="post">
 

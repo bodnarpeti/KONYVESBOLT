@@ -1,6 +1,8 @@
 <?php
-session_start();
+    session_start();
+    require('db/config.php');
 ?>
+
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -32,19 +34,6 @@ session_start();
     </ul>
 </nav>
 <img id="reading" src="images/reading.gif" alt="Reading" title="reading" width="350" height="250"  />
-<?php
-$tns = "
-(DESCRIPTION =
-    (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
-    )
-    (CONNECT_DATA =
-      (SID = xe)
-    )
-  )";
-
-$conn = oci_connect('system', 'oracle', $tns,'UTF8');
-?>
 
 <form action="books.php" method="post">
 
