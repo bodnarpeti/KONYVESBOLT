@@ -61,9 +61,17 @@ while ( $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
         <td style="text-align: center">
          <form action="controllers/salers/delete.php" method="post"> 
           <input type="hidden" name="id" value=' . $row['ELADOID'] . '>
-          <button type="submit">Delete</button> 
+          <button type="submit">Törlés</button> 
          </form> 
         </td>';
+    echo '
+    <td style="text-align: center">
+     <form action="controllers/salers/update.php" method="post"> 
+      <input type="hidden" name="id" value=' . $row['ELADOID'] . '>
+      <input type="hidden" name="teljesNevElado" value=' . $row['TELJESNEVELADO'] . '>
+      <button type="submit">Módosítás</button> 
+     </form> 
+    </td>';
     echo '</tr>';
 }
 echo '</table>';
