@@ -19,6 +19,8 @@ session_start();
         <li class="vasarlobtn"><a href = vasarlo.php target="_self">Vásárlóink</a></li>
         <li class="booksbtn"><a href = books.php target="_self">Könyveink</a></li>
         <li class="salersbtn"><a href = salers.php target="_self">Eladóink</a></li>
+        <li class="moviesbtn"><a href = movies.php target="_self">Filmjeink</a></li>
+	    <li class="cdsbtn"><a href = cds.php target="_self">CD-k</a></li>
     </ul>
 </nav>
 <p>Az alábbi Adatbázis alapú rendszerek gyakorlat projektmunka egy könyvesbolt webes felületének működését reprezentálja.</p>
