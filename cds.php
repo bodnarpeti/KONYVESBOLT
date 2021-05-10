@@ -9,7 +9,7 @@
     <title>Konyvesbolt</title>
     <meta name="author" content="Demeter Ádám, Tajti Sándor, Bodnár Péter"/>
     <link rel="icon" href="images/logo.png"/>
-    <link rel=stylesheet type="text/css" href="styles/books_styles.css" />
+    <link rel=stylesheet type="text/css" href="styles/cd_styles.css" />
     <style>
         #cds{
             position: relative;
