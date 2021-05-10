@@ -32,7 +32,7 @@
         <li class="booksbtn"><a href = books.php target="_self">Könyveink</a></li>
         <li class="salersbtn"><a href = salers.php target="_self">Eladóink</a></li>
         <li class="moviesbtn"><a href = movies.php target="_self">Filmjeink</a></li>
-	<li class="mcdsbtn"><a href = cds.php target="_self">CD-k</a></li>
+	<li class="cdsbtn"><a href = cds.php target="_self">CD-k</a></li>
     </ul>
 </nav>
 <img id="movies" src="images/movies.jpg" alt="Movies" title="reading" width="350" height="250"  />
