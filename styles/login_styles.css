@@ -15,3 +15,10 @@ input {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
 }
+
+.btn{
+    background-color: whitesmoke;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+}
