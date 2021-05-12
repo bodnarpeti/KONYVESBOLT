@@ -4,7 +4,7 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Login Konyvesbolt</title>
+    <title>Regist Konyvesbolt</title>
     <meta name="author" content="Demeter Ádám, Tajti Sándor, Bodnár Péter"/>
     <link rel="icon" href="images/logo.png"/>
     <link rel=stylesheet type="text/css" href="styles/reg_styles.css" />
