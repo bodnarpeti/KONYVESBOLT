@@ -1,7 +1,7 @@
 <?php
 session_start();
+require_once "db/config.php";
 if(!empty($_POST)) {
-    require_once "db/config.php";
     $msg="";
 
 
@@ -27,8 +27,8 @@ if(!empty($_POST)) {
 
         oci_execute($compiled);
 
-        header("Location: login.php");
     }
+    Header("Location: login.php");
 }
 require_once 'functions.php';
 if(empty($_POST['felhasznaloNev']) || empty($_POST['email']) ||  empty($_POST['pswd'])  || empty($_POST['pswdr'])){
