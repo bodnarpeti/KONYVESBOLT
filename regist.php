@@ -16,8 +16,7 @@
     <input class="" type="password" name="pswd" value="" placeholder="jelszó"></br></br>
     <input class="" type="password" name="pswdr" value="" placeholder="jelszó ismét"></br></br>
     <button class="btn" type="submit">Regisztráció</button>
-
 </form></br>
-<button class="btn" type="submit">Bejelentkezés</button>
+<a href="login.html"><button class="btn" type="submit">Bejelentkezés</button>
 </body>
 </html>
