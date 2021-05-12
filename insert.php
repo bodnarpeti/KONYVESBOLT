@@ -1,14 +1,22 @@
 <?php
 session_start();
 require_once "db/config.php";
+require_once 'functions.php';
+
+if(empty($_POST['felhasznaloNev']) || empty($_POST['email']) ||  empty($_POST['pswd'])  || empty($_POST['pswdr'])){
+    header("Location: regist.php?error=emptyInput");
+}
+
+else if(invalidEmail($email) !== false){
+    header("Location: regist.php?error=invalidEmail");
+
+}
+else if(passwordMatch($jelszo, $jelszor) !== false){
+    header("Location: regist.php?error=notMatchingPw");
+
+}
 if(!empty($_POST)) {
-    $msg="";
 
-
-    if($msg!="") {
-        //TODO show errors after redirect
-        //header("location:books.php?error=".$msg);
-    } else {
         $id = $_POST['felhasznaloNev'];
         $email = $_POST['email'];
         $jelszo = $_POST['pswd'];
@@ -26,21 +34,6 @@ if(!empty($_POST)) {
         oci_bind_by_name($compiled, ':pswdr', $jelszor);
 
         oci_execute($compiled);
-
-    }
-    Header("Location: login.php");
 }
-require_once 'functions.php';
-if(empty($_POST['felhasznaloNev']) || empty($_POST['email']) ||  empty($_POST['pswd'])  || empty($_POST['pswdr'])){
-    header("Location: regisztracio.php?error=emptyInput");
-}
-
-else if(invalidEmail($email) !== false){
-    header("Location: regist.php?error=invalidEmail");
-
-}
-else if(passwordMatch($jelszo, $jelszor) !== false){
-    header("Location: regist.php?error=notMatchingPw");
-
-}
+Header("Location: login.html");
 ?>
